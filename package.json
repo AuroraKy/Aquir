@@ -1,0 +1,31 @@
+{
+  "name": "thatonebot",
+  "version": "1.0.0",
+  "description": "Made for fun",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AuroraKy/ThatOneBot.git"
+  },
+  "keywords": [
+    "discord.js",
+    "bot"
+  ],
+  "author": "Aurora",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AuroraKy/ThatOneBot/issues"
+  },
+  "homepage": "https://github.com/AuroraKy/ThatOneBot#readme",
+  "dependencies": {
+    "discord.js": "^11.1.0",
+    "opusscript": "0.0.3",
+    "youtube-search": "^1.0.9",
+    "ytdl": "^0.6.0",
+	  "npm": "4.2.0",
+	  "node.js": "7.10.0"
+  }
+}

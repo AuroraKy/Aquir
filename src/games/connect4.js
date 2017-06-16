@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const config = require('../config.json');
-const c4r = require('./connect4Reactions.js');
 // // Await !vote messages
 // const filter = m => m.content.startsWith('!vote');
 // // Errors: ['time'] treats ending because of the time limit as an error
@@ -11,7 +10,6 @@ const c4r = require('./connect4Reactions.js');
 exports.start = (message, command) =>
 {
 	if(message.channel.type != "text") return failed(message, "Only available in text channels");
-	if(command.toLowerCase().includes("react")) return c4r.start(message, command);
 	if(!command.split(' ').slice(1).join(' ').startsWith("start")) return console.log("used c4 without start");
 	start = startedChans.get(message.channel.id);
 	console.log(start);
@@ -52,7 +50,6 @@ function game(message, user1, user2, turn, lastmessage, field) {
 	lastmessage.delete(1000);
 	message.channel.send("Current turn: "+ turn + out).then(msg =>{
 	lastmessage = msg
-	lastmessage.react("1⃣").then(() => lastmessage.react("2⃣")).then(() => lastmessage.react("3⃣")).then(() => lastmessage.react("4⃣")).then(() => lastmessage.react("5⃣")).then(() => lastmessage.react("6⃣")).then(() => lastmessage.react("7⃣"));
 	});
 	let filter =  m => (/[0-7]/.test(m.content) && m.author == turn) || m.content.includes("end") && (m.author == user1 || m.author == user2);
 	message.channel.awaitMessages(filter, { max: 1, time: 60000, errors: ['time']})
